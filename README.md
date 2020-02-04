@@ -1,38 +1,27 @@
 # TextEditorInC
-                Fondement du projet:
+                Project purpose:
 
-  Soit un texte donné en langue française, on désire implémenter quelques fonctions de traitement de
-texte, telle que chercher un mot, chercher et remplacer un mot par un autre avec des options, ....etc
+  Given text in French language, we want to implement some processing functions of
+text, such as search for a word, search and replace a word with another given some options, ...etc.
 
 
-                     Travail à faire
+                     Realized Work
 					 
-  Il s’agit d’écrire un programme en C de manipulation de fichier texte. Tous les traitements se font
-à la demande par le biais d’un menu principal
-— Afficher le fichier page par page avec les informations suivantes : Nombre de caractères,
-nombre de mots, nombre de lignes et nombre de pages.
-— Implémenter les fonctions de formatage des paragraphes du fichier avec les fonctions aligner à
-gauche, à droite, à gauche et à droite, et centrer. En insérant des symboles devant et après le
-paragraphe qu’on veut traiter(préalabelement). Par exemple si on met /c/ devant et après un paragraphe,
-il sera centré.
-— Implémenter la fonction chercher et remplacer avec ses différentes formules.Quand le mot recherché n’est pas trouvé, affichez le ou les mots qui se rapprochent le plus. . Si c’est une recherche approximative elle doit être signalée.
-Pour réaliser cette fonction, il faudra construire un fichier index contenant tous les mots du fichier
-avec leur emplacement. La recherche d’un mot se fera dans l’index. En cas de remplacement mettre
-à jour l’index.
+  A C program to manipulate a text file. A menu navigation is used to do one of the following processing :
+- Display the file page by page with the following information : Number of characters, number of words, number of lines and number of pages.
+- Paragraphs formatting : align to left, right, left and right, and center. To get the formatting done, the user have to insert symbols before and after the paragraph to deal with. For example if you put /c/ before and after a paragraph, it will be centered.
+- Search and replace function with its different formulas. When the searched word is not found, display the word or words that are closest to it . If it is an approximate search it must be indicated. In order to perform this function, it will be necessary to build an index file containing all the words in the file with their location. The search for a word will be done in the index. In case of replacement the index is updated.
 
-                  Principe de fonctionnement
+                  Logic explanation
 				  
-1-Lorque l'utilisateur ouvre le fichier, on le parcour une promiere fois en faisant une 
-analyse syntaxique (calcule du nombre de balise...);
-2-On fait un autre parcour qui depend du premier pour indexer les coords des pages, calculer le nombre de mots,le nombre de lignes...
-et indexer aussi les mot dans plusieures fichiers index triés (Pour faire une recherche dichotomique) en indexant les lignes aussi.
-3-Pour remplacer un mot on crée un nouveau fichier et aller à 1.
+1-When the user opens the file, we perform a first pass to do a syntax analysis (calculates the number of tags...);
+2-An other pass is performed and it depends on the first one, the purpose is to index the page borders, calculate the number of words, the number of lines... and index also the words in several sorted index files (To make a dichotomous search) by indexing the lines too.
+3-To replace a word we create a new file then (jump to 1).
 
-                utilisation du programme réalisé
+                Program use
 				
-1-Entrez le nom d'un fichier existant et correctement sinon le programme terminera
-2-Utilisez le flèches "haut et bas" pour allez à la page precedente/suivante.
-3-Cliquer un nombe [0-9] un message s'affichera, faites entrer le numero de la page pour y aller.
-4-Cliquer sur R/r pour rechercher un mot s'il existe il sera coloré et pour aller a l'ocurrence suivante cliquer sur Entrée, si vous voulez annuler la recherche cliquer Echap, s'il n'existe pas 
-un message s'affichera et vous pouver proceder une recherche approximative.
-5-Pour remplacer un mot il faut le chercher tout d'abord puis cliquer sur F/f, un message s'affichera Et faites entrer le nouveau mot, pour remplacer l'occurence suivante cliquer Entrée puis une autre F/f.
+1-Enter the name of an existing file otherwise the program will end.
+2-Use the "up and down" arrows to go to the previous/next page.
+3-Select a number [0-9] a message will be displayed, enter the page number reach it.
+4-Click on R/r to search for a word if it exists, it will be colored and to go to the next page click on Enter, if you want to cancel the search click Esc, if it doesn't exist a message will be displayed and you can search the closest words.
+5-To replace a word it is necessary to seek it first, then to click on F/f, a message will be displayed, enter the new word, to replace the following occurence click Enter then another F/f.
